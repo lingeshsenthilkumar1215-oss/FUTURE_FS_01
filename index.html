@@ -1,101 +1,49 @@
+<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Local premium cafe offering artisanal coffee and fresh pastries.">
-    <title>The Heritage Roast | Local Café</title>
+    <title>Admin Mini CRM</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Navigation -->
     <header>
-        <nav class="navbar">
-            <div class="logo">The Heritage Roast</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#menu">Our Menu</a></li>
-                <li><a href="#about">Our Story</a></li>
-                <li><a href="#contact">Visit Us</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+        <h1>Client Lead Management System</h1>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Freshly Brewed, Every Single Day.</h1>
-            <p>Experience the finest artisanal coffee and homemade pastries right in your neighborhood.</p>
-            <a href="#menu" class="btn btn-primary">View Menu</a>
-            <a href="#contact" class="btn btn-secondary">Find Us</a>
-        </div>
-    </section>
+    <main>
+        <section class="add-lead-section">
+            <h2>Add New Lead</h2>
+            <form id="addLeadForm">
+                <input type="text" id="name" placeholder="Client Name" required>
+                <input type="email" id="email" placeholder="Client Email" required>
+                <input type="text" id="source" placeholder="Source (e.g., Website, Facebook)" required>
+                <button type="submit">Save Lead</button>
+            </form>
+        </section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="menu-section">
-        <h2>Our Signature Drinks</h2>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <h3>Classic Espresso</h3>
-                <p>Rich, full-bodied espresso with a perfect crema.</p>
-                <span class="price">₹120</span>
+        <section class="leads-dashboard">
+            <h2>Lead Pipeline</h2>
+            <div class="table-container">
+                <table id="leadsTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Source</th>
+                            <th>Status</th>
+                            <th>Notes & Follow-ups</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leadsBody">
+                        <!-- Leads will be injected here via JavaScript -->
+                    </tbody>
+                </table>
             </div>
-            <div class="menu-item">
-                <h3>Caramel Macchiato</h3>
-                <p>Espresso paired with vanilla and caramel drizzle.</p>
-                <span class="price">₹180</span>
-            </div>
-            <div class="menu-item">
-                <h3>Iced Hazelnut Latte</h3>
-                <p>Chilled milk and espresso infused with toasted hazelnut.</p>
-                <span class="price">₹200</span>
-            </div>
-            <div class="menu-item">
-                <h3>Artisan Croissant</h3>
-                <p>Buttery, flaky, and baked fresh every morning.</p>
-                <span class="price">₹90</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Location Section -->
-    <section id="contact" class="contact-section">
-        <h2>Plan Your Visit</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Location</h3>
-                <p>124 Main Cafe Street</p>
-                <p>Pollachi, Tamil Nadu 642001</p>
-                
-                <h3>Hours</h3>
-                <p>Mon - Fri: 7:00 AM - 8:00 PM</p>
-                <p>Sat - Sun: 8:00 AM - 9:00 PM</p>
-                
-                <h3>Contact</h3>
-                <p>Phone: +91 98765 43210</p>
-                <p>Email: hello@heritageroast.com</p>
-            </div>
-            <div class="contact-form">
-                <h3>Reserve a Table or Inquire for Catering</h3>
-                <form id="inquiryForm">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="How can we help you?" rows="4" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 The Heritage Roast. Designed for Future Interns.</p>
-    </footer>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
